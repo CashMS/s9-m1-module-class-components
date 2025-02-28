@@ -1,8 +1,6 @@
 import React from 'react'
 import Form from './Form';
 import TodoList from './TodoList';
-
-// useRef
 export default class App extends React.Component {
   constructor() {
     super();
@@ -32,9 +30,7 @@ export default class App extends React.Component {
     this.setState((prevState) => ({
       todos: [...prevState.todos, newTodo],
       input: '',
-    }), () => {
-      console.log(this.state.todos);
-    });
+    }));
   }
 
   handleCompleted = (id) => {
@@ -46,9 +42,7 @@ export default class App extends React.Component {
           return todo.id === id ? { ...todo, completed: false } : todo
         }
       })
-    }), () => {
-      console.log(this.state.todos);
-    })
+    }))
   }
 
   handleEnter = (e) => {
